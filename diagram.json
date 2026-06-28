@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "author": "Larry Brendel",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-nano", "id": "nano", "top": 120, "left": 95.5, "attrs": {} },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd1",
+      "top": -99.2,
+      "left": -100,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-ky-040", "id": "encoder1", "top": 116.9, "left": -96.8, "attrs": {} }
+  ],
+  "connections": [
+    [ "nano:GND.2", "encoder1:GND", "black", [ "v-28.8", "h-134.4", "v67.2", "h-9.6" ] ],
+    [ "nano:GND.2", "lcd1:GND", "black", [ "v-38.4", "h-345.6", "v-153.6" ] ],
+    [ "nano:5V", "encoder1:VCC", "red", [ "v9.6", "h-172.8", "v-38.4" ] ],
+    [ "nano:5V", "lcd1:VCC", "red", [ "v19.2", "h-355.2", "v-259.3" ] ],
+    [ "encoder1:SW", "nano:A2", "orange", [ "h19.2", "v67.3", "h105.6" ] ],
+    [ "nano:A1", "encoder1:DT", "blue", [ "v38.4", "h-86.4", "v-86.4" ] ],
+    [ "nano:A0", "encoder1:CLK", "purple", [ "v48", "h-67.2", "v-105.6" ] ],
+    [ "nano:A5", "lcd1:SCL", "gold", [ "v57.6", "h-316.8", "v-278.4", "h19.2" ] ],
+    [ "nano:A4", "lcd1:SDA", "green", [ "v67.2", "h-297.6", "v-297.6" ] ]
+  ],
+  "dependencies": {}
+}
